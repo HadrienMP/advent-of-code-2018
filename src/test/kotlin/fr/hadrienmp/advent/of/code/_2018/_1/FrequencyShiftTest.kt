@@ -22,8 +22,5 @@ class FrequencyShiftTest {
         val actual = shiftFrequency(1, 2)
         assertEquals(3, actual)
     }
-
-    private fun shiftFrequency(shift: Int, i: Int) = shiftFrequency(shift) + i
-
 }
 
