@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class FrequencyShiftParserTest {
     @Test
     internal fun `should return an empty array for an empty string`() {
-        val frequencyShifts = parse()
+        val frequencyShifts = parse("")
         assertTrue { frequencyShifts.isEmpty() }
     }
 }
