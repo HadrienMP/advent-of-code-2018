@@ -2,15 +2,24 @@ package fr.hadrienmp.advent.of.code._2018._1
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
 
 class CalibrationTest {
-    @Test
-    internal fun `should return the first frequency that was reached twice`() {
-        val frequencies = listOf(2, -1)
+    @ParameterizedTest
+    @MethodSource("entries")
+    internal fun `should return the first frequency that was reached twice`(frequencies: List<Int>, expected: Int) {
         val calibrationFrequency = getCalibrationFrequency(frequencies)
-        assertThat(calibrationFrequency).isEqualTo(1)
+        assertThat(calibrationFrequency).isEqualTo(expected)
     }
 
-    private fun getCalibrationFrequency(frequencies: List<Int>) =
-            1
+    companion object {
+        @JvmStatic
+        fun entries(): List<Arguments> {
+            return listOf(Arguments.arguments(listOf(2, -2), 0))
+        }
+    }
+
+    private fun getCalibrationFrequency(frequencies: List<Int>) = 0
 }
