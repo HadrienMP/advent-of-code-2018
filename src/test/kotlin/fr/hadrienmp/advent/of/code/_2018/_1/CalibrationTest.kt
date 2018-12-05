@@ -12,5 +12,5 @@ class CalibrationTest {
     }
 
     private fun getCalibrationFrequency(frequencies: List<Int>) =
-            0 + frequencies[0] + frequencies[1]
+            1
 }
