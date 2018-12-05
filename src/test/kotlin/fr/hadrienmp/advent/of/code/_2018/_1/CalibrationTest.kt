@@ -17,7 +17,7 @@ class CalibrationTest {
     }
 
     @Test
-    internal fun `should throw an exception when no frequency was reached twice`() {
+    internal fun `should throw an exception for an empty list`() {
         assertThrows<IllegalArgumentException> { getCalibrationFrequency(emptyList()) }
     }
 
