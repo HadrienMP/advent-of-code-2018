@@ -22,4 +22,10 @@ class FrequencyShiftParserTest {
         val frequencyShifts = parse("-1")
         assertArrayEquals(arrayOf(-1), frequencyShifts)
     }
+
+    @Test
+    internal fun `multiple numbers`() {
+        val frequencyShifts = parse("-1, 2, -3, 4, 5")
+        assertArrayEquals(arrayOf(-1, 2, -3, 4, 5), frequencyShifts)
+    }
 }
