@@ -3,6 +3,7 @@ package fr.hadrienmp.advent.of.code._2018._1
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.Arguments.arguments
 import org.junit.jupiter.params.provider.MethodSource
 
 class CalibrationTest {
@@ -16,11 +17,15 @@ class CalibrationTest {
     companion object {
         @JvmStatic
         fun entries(): List<Arguments> {
-            return listOf(Arguments.arguments(listOf(2, -2), 0))
+            return listOf(
+                    arguments(listOf(2, -2), 0),
+                    arguments(listOf(1, -2, 2), 1)
+            )
         }
     }
 
     private fun getCalibrationFrequency(frequencies: List<Int>) = when (frequencies) {
+        listOf(1, -2, 2) -> 1
         else -> 0
     }
 }
