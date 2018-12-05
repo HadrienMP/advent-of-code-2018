@@ -9,6 +9,4 @@ class FrequencyShiftParserTest {
         val frequencyShifts = parse()
         assertTrue { frequencyShifts.isEmpty() }
     }
-
-    private fun parse() = emptyArray<Int>()
 }
