@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test
 class FrequencyShiftTest {
     @Test
     internal fun at_first_the_frequency_should_be_0() {
-        assertEquals(0, 0)
+        val frequency = 0
+        assertEquals(0, frequency)
     }
 }
