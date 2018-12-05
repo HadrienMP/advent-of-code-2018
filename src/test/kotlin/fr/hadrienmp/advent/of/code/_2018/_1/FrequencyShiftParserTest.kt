@@ -16,4 +16,10 @@ class FrequencyShiftParserTest {
         val frequencyShifts = parse("+1")
         assertArrayEquals(arrayOf(1), frequencyShifts)
     }
+
+    @Test
+    internal fun `one negative number`() {
+        val frequencyShifts = parse("-1")
+        assertArrayEquals(arrayOf(-1), frequencyShifts)
+    }
 }
