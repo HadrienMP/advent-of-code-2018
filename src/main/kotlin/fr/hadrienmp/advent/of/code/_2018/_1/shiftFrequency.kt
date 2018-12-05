@@ -6,4 +6,4 @@ fun parse(toParse: String): Array<Int> =
                 .map(String::toInt)
                 .toTypedArray()
 
-fun shiftFrequency(vararg shifts: Int) = 0 + shifts.sum()
+fun shiftFrequency(vararg shifts: Int) = shifts.sum()
