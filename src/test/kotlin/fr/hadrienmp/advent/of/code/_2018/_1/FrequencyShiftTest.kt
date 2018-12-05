@@ -12,7 +12,9 @@ class FrequencyShiftTest {
 
     @Test
     internal fun `adding once`() {
-        assertEquals(1, 0 + 1)
+        val shift = 1
+        val actual = 0 + shift
+        assertEquals(1, actual)
     }
 }
 
