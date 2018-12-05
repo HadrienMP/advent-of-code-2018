@@ -1,7 +1,7 @@
 package fr.hadrienmp.advent.of.code._2018._1
 
-fun parse(s: String) = when (s) {
-    "+1" -> arrayOf(s.toInt())
+fun parse(s: String): Array<Int> = when (s) {
+    "+1" -> arrayOf("+1").map(String::toInt).toTypedArray()
     else -> emptyArray()
 }
 
