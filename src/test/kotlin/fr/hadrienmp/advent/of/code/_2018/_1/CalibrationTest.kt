@@ -1,6 +1,8 @@
 package fr.hadrienmp.advent.of.code._2018._1
 
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.Arguments.arguments
@@ -12,6 +14,11 @@ class CalibrationTest {
     internal fun `should return the first frequency that was reached twice`(frequencies: List<Int>, expected: Int) {
         val calibrationFrequency = getCalibrationFrequency(frequencies)
         assertThat(calibrationFrequency).isEqualTo(expected)
+    }
+
+    @Test
+    internal fun `should throw an exception when no frequency was reached twice`() {
+        assertThrows<IllegalArgumentException> { getCalibrationFrequency(emptyList()) }
     }
 
     companion object {
@@ -27,6 +34,7 @@ class CalibrationTest {
 
     private fun getCalibrationFrequency(frequencies: List<Int>) = when {
         frequencies.size >= 3 -> frequencies[0]
+        frequencies.isEmpty() -> throw IllegalArgumentException()
         else -> 0
     }
 }
