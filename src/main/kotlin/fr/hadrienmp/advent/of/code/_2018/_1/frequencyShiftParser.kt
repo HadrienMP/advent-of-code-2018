@@ -5,5 +5,3 @@ fun parse(rawFrequencyShifts: String): IntArray =
                 .filter(String::isNotEmpty)
                 .map(String::toInt)
                 .toIntArray()
-
-fun shiftFrequency(vararg shifts: Int) = shifts.sum()
