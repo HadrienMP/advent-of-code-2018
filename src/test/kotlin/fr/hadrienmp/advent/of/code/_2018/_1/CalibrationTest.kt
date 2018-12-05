@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test
 
 class CalibrationTest {
     @Test
-    internal fun should_return_the_first_frequency_that_was_reached_twice() {
+    internal fun `should return the first frequency that was reached twice`() {
 
     }
 }
