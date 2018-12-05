@@ -13,19 +13,19 @@ class FrequencyShiftParserTest {
 
     @Test
     internal fun `one positive number`() {
-        val frequencyShifts = parse("+1")
+        val frequencyShifts = parse("+1").toTypedArray()
         assertArrayEquals(arrayOf(1), frequencyShifts)
     }
 
     @Test
     internal fun `one negative number`() {
-        val frequencyShifts = parse("-1")
+        val frequencyShifts = parse("-1").toTypedArray()
         assertArrayEquals(arrayOf(-1), frequencyShifts)
     }
 
     @Test
     internal fun `multiple numbers`() {
-        val frequencyShifts = parse("-1\n" + "2\n" + "-3\n" + "4\n" + "5")
+        val frequencyShifts = parse("-1\n" + "2\n" + "-3\n" + "4\n" + "5").toTypedArray()
         assertArrayEquals(arrayOf(-1, 2, -3, 4, 5), frequencyShifts)
     }
 }
