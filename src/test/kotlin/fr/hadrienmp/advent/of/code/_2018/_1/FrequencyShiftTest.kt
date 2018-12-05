@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test
 
 class FrequencyShiftTest {
     @Test
-    internal fun name() {
+    internal fun at_first_the_frequency_should_be_0() {
+
     }
 }
