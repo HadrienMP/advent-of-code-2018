@@ -9,6 +9,5 @@ class FrequencyShiftTest {
         val frequency = shiftFrequency()
         assertEquals(0, frequency)
     }
-
-    private fun shiftFrequency() = 0
 }
+
