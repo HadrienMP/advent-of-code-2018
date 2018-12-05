@@ -20,8 +20,8 @@ class FrequencyShiftTest {
     @Test
     internal fun `changing the frequency positively twice should increase it by the changes`() {
         val shift = 1
-        val actual = shiftFrequency(shift)
-        assertEquals(3, actual + 2)
+        val actual = shiftFrequency(shift) + 2
+        assertEquals(3, actual)
     }
 
 }
