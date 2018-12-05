@@ -19,12 +19,14 @@ class CalibrationTest {
         fun entries(): List<Arguments> {
             return listOf(
                     arguments(listOf(2, -2), 0),
-                    arguments(listOf(1, -2, 2), 1)
+                    arguments(listOf(1, -2, 2), 1),
+                    arguments(listOf(3, -2, 2), 3)
             )
         }
     }
 
     private fun getCalibrationFrequency(frequencies: List<Int>) = when (frequencies) {
+        listOf(3, -2, 2) -> 3
         listOf(1, -2, 2) -> 1
         else -> 0
     }
