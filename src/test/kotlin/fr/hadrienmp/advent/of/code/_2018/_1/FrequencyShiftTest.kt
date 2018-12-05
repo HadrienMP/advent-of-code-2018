@@ -17,6 +17,5 @@ class FrequencyShiftTest {
         assertEquals(1, actual)
     }
 
-    private fun shiftFrequency(shift: Int) = shiftFrequency() + shift
 }
 
