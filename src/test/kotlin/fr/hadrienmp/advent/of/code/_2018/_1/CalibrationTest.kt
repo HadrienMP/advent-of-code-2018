@@ -7,7 +7,10 @@ class CalibrationTest {
     @Test
     internal fun `should return the first frequency that was reached twice`() {
         val frequencies = listOf(2, -1)
-        val calibrationFrequency = 0 + frequencies[0] + frequencies[1]
+        val calibrationFrequency = getCalibrationFrequency(frequencies)
         assertThat(calibrationFrequency).isEqualTo(1)
     }
+
+    private fun getCalibrationFrequency(frequencies: List<Int>) =
+            0 + frequencies[0] + frequencies[1]
 }
