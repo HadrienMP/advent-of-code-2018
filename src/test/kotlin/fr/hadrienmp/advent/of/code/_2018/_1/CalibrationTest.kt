@@ -29,6 +29,7 @@ class CalibrationTest {
                     arguments(listOf(2, -2), 0),
                     arguments(listOf(1, -2, 2), 1),
                     arguments(listOf(3, -2, 2), 3),
+                    arguments(listOf(-2, 3, 0), 1),
                     arguments(listOf(0), 0)
             )
         }
