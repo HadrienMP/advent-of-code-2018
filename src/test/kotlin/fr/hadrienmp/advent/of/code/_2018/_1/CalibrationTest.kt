@@ -28,12 +28,14 @@ class CalibrationTest {
                     arguments(listOf(2, -2), 0),
                     arguments(listOf(1, -2, 2), 1),
                     arguments(listOf(3, -2, 2), 3),
+                    arguments(listOf(-2, 3, 2), 3),
                     arguments(listOf(0), 0)
             )
         }
     }
 
     private fun getCalibrationFrequency(frequencies: List<Int>) = when {
+        frequencies.size >= 3 && frequencies[0] + frequencies[2] == 0 -> frequencies[1]
         frequencies.size >= 3 && frequencies[1] + frequencies[2] == 0 -> frequencies[0]
         frequencies.size == 2 && frequencies[0] + frequencies[1] == 0 -> 0
         frequencies.size == 1 && frequencies[0] == 0 -> 0
