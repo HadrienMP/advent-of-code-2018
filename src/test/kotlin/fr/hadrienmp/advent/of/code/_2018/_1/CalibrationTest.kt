@@ -25,8 +25,8 @@ class CalibrationTest {
         }
     }
 
-    private fun getCalibrationFrequency(frequencies: List<Int>) = when (frequencies.size) {
-        3 -> frequencies[0]
+    private fun getCalibrationFrequency(frequencies: List<Int>) = when {
+        frequencies.size >= 3 -> frequencies[0]
         else -> 0
     }
 }
