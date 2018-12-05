@@ -37,7 +37,6 @@ class CalibrationTest {
         frequencies.size >= 3 && frequencies[1] + frequencies[2] == 0 -> frequencies[0]
         frequencies.size == 2 && frequencies[0] + frequencies[1] == 0 -> 0
         frequencies.size == 1 && frequencies[0] == 0 -> 0
-        frequencies.isEmpty() -> throw IllegalArgumentException()
-        else -> 0
+        else -> throw IllegalArgumentException()
     }
 }
