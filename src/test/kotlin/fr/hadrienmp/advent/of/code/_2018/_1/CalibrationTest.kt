@@ -1,7 +1,6 @@
 package fr.hadrienmp.advent.of.code._2018._1
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
@@ -21,5 +20,7 @@ class CalibrationTest {
         }
     }
 
-    private fun getCalibrationFrequency(frequencies: List<Int>) = 0
+    private fun getCalibrationFrequency(frequencies: List<Int>) = when (frequencies) {
+        else -> 0
+    }
 }
