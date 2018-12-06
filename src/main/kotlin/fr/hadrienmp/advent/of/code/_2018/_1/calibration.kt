@@ -1,5 +1,5 @@
-fun getCalibrationFrequency(frequencies: List<Int>,
-                            knownFrequencies: MutableList<Int> = mutableListOf(0)): Int {
+fun getCalibrationFrequency(frequencies: List<Int>): Int {
+    val knownFrequencies: MutableList<Int> = mutableListOf(0)
     if (frequencies.isEmpty()) {
         throw IllegalArgumentException()
     }
