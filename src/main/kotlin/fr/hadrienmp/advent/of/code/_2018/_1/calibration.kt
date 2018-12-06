@@ -8,7 +8,8 @@ class Device(val knownFrequencies: MutableList<Int> = mutableListOf(0)) {
         if (frequencies == listOf(2, -1)) return 2
         return frequencies.map(this::calibrationFrequency)
                 .filterNotNull()
-                .first()
+                .firstOrNull()
+                ?: calibrate(frequencies)
     }
 
     fun calibrationFrequency(frequency: Int): Int? {
