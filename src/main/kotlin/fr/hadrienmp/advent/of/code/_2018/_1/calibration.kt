@@ -3,9 +3,11 @@ fun getCalibrationFrequency(frequencies: List<Int>,
     if (frequencies.isEmpty()) {
         throw IllegalArgumentException()
     }
-    val newFrequency = knownFrequencies[0] + frequencies[0]
-    if (knownFrequencies.contains(newFrequency)) return newFrequency
-    knownFrequencies.add(newFrequency)
+    (0..frequencies.size).forEach {
+        val newFrequency = knownFrequencies[it] + frequencies[it]
+        if (knownFrequencies.contains(newFrequency)) return newFrequency
+        knownFrequencies.add(newFrequency)
+    }
 
     if (frequencies.size >= 2) {
         val newFrequency2 = knownFrequencies[1] + frequencies[1]
