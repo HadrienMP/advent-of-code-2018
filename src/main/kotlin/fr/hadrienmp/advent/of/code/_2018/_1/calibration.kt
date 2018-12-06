@@ -5,7 +5,6 @@ fun getCalibrationFrequency(frequencies: List<Int>): Int {
 class Device(val knownFrequencies: KnownFrequencies = KnownFrequencies()) {
     fun calibrate(frequencies: List<Int>): Int {
         return frequencies.stream()
-                .map { knownFrequencies.last() + it }
                 .map(knownFrequencies::calibrationFrequency)
                 .filter { it != null }
                 .map { it!! }
@@ -16,8 +15,9 @@ class Device(val knownFrequencies: KnownFrequencies = KnownFrequencies()) {
 
 class KnownFrequencies(val knownFrequencies: MutableList<Int> = mutableListOf(0)) {
     fun calibrationFrequency(frequency: Int): Int? {
-        if (knownFrequencies.contains(frequency)) return frequency
-        knownFrequencies.add(frequency)
+        val newFrequency = knownFrequencies.last() + frequency
+        if (knownFrequencies.contains(newFrequency)) return newFrequency
+        knownFrequencies.add(newFrequency)
         return null
     }
 
