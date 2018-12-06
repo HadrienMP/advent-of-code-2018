@@ -7,8 +7,7 @@ class Device(val knownFrequencies: MutableList<Int> = mutableListOf(0)) {
         if (frequencies.isEmpty()) throw IllegalArgumentException()
         return frequencies.map(this::calibrationFrequency)
                 .filterNotNull()
-                .firstOrNull()
-                ?: throw IllegalArgumentException()
+                .first()
     }
 
     fun calibrationFrequency(frequency: Int): Int? {
