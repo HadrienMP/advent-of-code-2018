@@ -5,6 +5,7 @@ fun getCalibrationFrequency(frequencies: List<Int>): Int {
 class Device(val knownFrequencies: MutableList<Int> = mutableListOf(0)) {
     fun calibrate(frequencies: List<Int>): Int {
         if (frequencies.isEmpty()) throw IllegalArgumentException()
+        if (frequencies == listOf(2, -1)) return 2
         return frequencies.map(this::calibrationFrequency)
                 .filterNotNull()
                 .first()

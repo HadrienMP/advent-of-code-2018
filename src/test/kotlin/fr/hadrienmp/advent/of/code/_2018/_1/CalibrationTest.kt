@@ -18,6 +18,12 @@ class CalibrationTest {
     }
 
     @Test
+    internal fun `reaching a frequency twice after two runs`() {
+        val calibrationFrequency = getCalibrationFrequency(listOf(2, -1))
+        assertThat(calibrationFrequency).isEqualTo(2)
+    }
+
+    @Test
     internal fun `should throw an exception for an empty list`() {
         assertThrows<IllegalArgumentException> { getCalibrationFrequency(emptyList()) }
     }
