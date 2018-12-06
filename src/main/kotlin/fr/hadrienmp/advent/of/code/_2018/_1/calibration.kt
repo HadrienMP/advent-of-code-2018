@@ -17,7 +17,6 @@ fun getCalibrationFrequency(frequencies: List<Int>,
             if (knownFrequencies.contains(newFrequency3)) return newFrequency3
             knownFrequencies.add(newFrequency3)
         }
-        if (frequencies == listOf(-2, 3, 0)) return 1
     }
 
     throw IllegalArgumentException()
