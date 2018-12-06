@@ -4,12 +4,12 @@ fun getCalibrationFrequency(frequencies: List<Int>): Int {
 
 class Device(val knownFrequencies: KnownFrequencies = KnownFrequencies()) {
     fun calibrate(frequencies: List<Int>): Int {
-        return frequencies.stream()
+        return frequencies
                 .map(knownFrequencies::calibrationFrequency)
                 .filter { it != null }
                 .map { it!! }
-                .findFirst()
-                .orElseThrow { IllegalArgumentException() }
+                .firstOrNull()
+                ?: throw IllegalArgumentException()
     }
 }
 
