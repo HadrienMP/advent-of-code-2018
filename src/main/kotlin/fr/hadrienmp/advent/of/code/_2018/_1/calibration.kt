@@ -20,6 +20,4 @@ class KnownFrequencies(val knownFrequencies: MutableList<Int> = mutableListOf(0)
         knownFrequencies.add(newFrequency)
         return null
     }
-
-    fun last() = knownFrequencies.last()
 }
