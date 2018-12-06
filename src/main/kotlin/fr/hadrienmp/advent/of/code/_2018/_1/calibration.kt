@@ -11,7 +11,12 @@ fun getCalibrationFrequency(frequencies: List<Int>,
         val newFrequency2 = knownFrequencies[1] + frequencies[1]
         if (knownFrequencies.contains(newFrequency2)) return newFrequency2
         knownFrequencies.add(newFrequency2)
-        if (frequencies.size >= 3 && frequencies[1] + frequencies[2] == 0) return frequencies[0]
+
+        if (frequencies.size >= 3) {
+            val newFrequency3 = knownFrequencies[2] + frequencies[2]
+            if (knownFrequencies.contains(newFrequency3)) return newFrequency3
+            knownFrequencies.add(newFrequency3)
+        }
         if (frequencies == listOf(-2, 3, 0)) return 1
     }
 
