@@ -1,10 +1,9 @@
 package fr.hadrienmp.advent.of.code._2018._1
 
-fun <R> time(functionName: String, toTime: () -> R): R {
+fun <R> time(toTime: () -> R): Pair<R, Long> {
     val timer = Timer()
     val result = toTime.invoke()
-    println("$functionName took : ${timer.timeSinceStart()}s")
-    return result
+    return Pair(result, timer.timeSinceStart())
 }
 
 class Timer(private val start: Long = System.nanoTime()) {
