@@ -1,4 +1,4 @@
-fun calibrate(frequencies: List<Int>): Int {
+fun findCalibrationFrequency(frequencies: List<Int>): Int {
     return Device().calibrate(frequencies)
 }
 

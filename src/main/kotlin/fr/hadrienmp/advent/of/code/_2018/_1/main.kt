@@ -1,13 +1,13 @@
 package fr.hadrienmp.advent.of.code._2018._1
 
-import calibrate
+import findCalibrationFrequency
 
 fun main(args: Array<String>) {
     val frequencies = frequencies()
 
     println(frequencies.sum())
 
-    display(time { calibrate(frequencies) })
+    display(time { findCalibrationFrequency(frequencies) })
 }
 
 private fun frequencies(): List<Int> {
