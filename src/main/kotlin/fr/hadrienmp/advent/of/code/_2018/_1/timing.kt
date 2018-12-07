@@ -1,10 +1,12 @@
 package fr.hadrienmp.advent.of.code._2018._1
 
-fun <R> time(toTime: () -> R): Pair<R, Long> {
+fun <R> time(toTime: () -> R): TimedExecution<R> {
     val timer = Timer()
     val result = toTime.invoke()
-    return Pair(result, timer.timeSinceStart())
+    return TimedExecution(result, timer.timeSinceStart())
 }
+
+data class TimedExecution<R>(val result: R, val seconds: Long)
 
 class Timer(private val start: Long = System.nanoTime()) {
     fun timeSinceStart(): Long {
