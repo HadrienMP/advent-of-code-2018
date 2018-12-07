@@ -1,9 +1,12 @@
 package fr.hadrienmp.advent.of.code._2018._1
 
+import Device
+import TimingDevice
+
 fun main(args: Array<String>) {
-    read("fr/hadrienmp/advent/of/code/_2018/_1/input.txt")
+    val frequencies = read("fr/hadrienmp/advent/of/code/_2018/_1/input.txt")
             .let { parse(it) }
-            .sum()
-            .let { println(it) }
+    frequencies.sum().let { println(it) }
+    TimingDevice(Device()).calibrate(frequencies).let { println(it) }
 }
 

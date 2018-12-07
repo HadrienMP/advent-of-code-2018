@@ -1,6 +1,6 @@
 package fr.hadrienmp.advent.of.code._2018._1
 
-import getCalibrationFrequency
+import Device
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -13,19 +13,19 @@ class CalibrationTest {
     @ParameterizedTest
     @MethodSource("entries")
     internal fun `should return the first frequency that was reached twice`(frequencies: List<Int>, expected: Int) {
-        val calibrationFrequency = getCalibrationFrequency(frequencies)
+        val calibrationFrequency = Device().calibrate(frequencies)
         assertThat(calibrationFrequency).isEqualTo(expected)
     }
 
     @Test
     internal fun `reaching a frequency twice after two runs`() {
-        val calibrationFrequency = getCalibrationFrequency(listOf(2, -1))
+        val calibrationFrequency = Device().calibrate(listOf(2, -1))
         assertThat(calibrationFrequency).isEqualTo(2)
     }
 
     @Test
     internal fun `should throw an exception for an empty list`() {
-        assertThrows<IllegalArgumentException> { getCalibrationFrequency(emptyList()) }
+        assertThrows<IllegalArgumentException> { Device().calibrate(emptyList()) }
     }
 
     companion object {
